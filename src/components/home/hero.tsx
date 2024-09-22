@@ -14,6 +14,7 @@ import Rings from './models/rings';
 import Cube from './models/cube';
 import HeroCamera from './hero-camera';
 import { Button } from '../ui/button';
+import PythonLogo from './models/python-logo';
 
 type Props = {}
 
@@ -55,7 +56,7 @@ const Hero = (props: Props) => {
                     <Suspense fallback={<CanvasLoader />}>
 
                         <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-                        <HeroCamera isMobile>
+                        <HeroCamera isMobile={isMobile}>
                             <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition as Vector3} rotation={[0.1, -Math.PI, 0]} />
                         </HeroCamera>
                         <group>
@@ -63,6 +64,12 @@ const Hero = (props: Props) => {
                             <ReactLogo position={sizes.reactLogoPosition as Vector3} />
                             <Rings position={sizes.ringPosition} />
                             <Cube position={sizes.cubePosition} />
+                            <PythonLogo 
+                                position={targetControl.position} 
+                                // rotation={targetControl.rotation} 
+                                rotation={[-Math.PI / 2, 0, 0]}
+                                scale={targetControl.scale}
+                            />
                         </group>
                         <ambientLight intensity={1} />
                         <directionalLight position={[10, 10, 10]} intensity={0.5} />

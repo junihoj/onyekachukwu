@@ -1,6 +1,7 @@
 import Hero from "@/components/home/hero";
 import NavBar from "@/components/home/nav-bar";
 import About from "@/components/home/section/about";
+import Projects from "@/components/home/section/project";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <About />
+      <Projects />
     </main>
   );
 }

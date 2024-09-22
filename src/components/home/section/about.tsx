@@ -8,8 +8,10 @@ const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('ezeonyekachukwu98@gmail.com');
-    setHasCopied(true);
+    if(typeof window !== "undefined"){
+      navigator.clipboard.writeText('ezeonyekachukwu98@gmail.com');
+      setHasCopied(true);
+    }
 
     setTimeout(() => {
       setHasCopied(false);
